@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_700"
+        tools:context=".MainActivity">
+        <ImageView
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="25dp"
+                android:id="@+id/bit_logo"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bit_logo"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/balance_main"
+                android:text="@string/balance"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/bit_logo"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="50dp"
+            />
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/frame_layout"
+                android:background="@drawable/frame_border"
+                android:layout_below="@+id/balance_main"
+                android:minHeight="450dp"
+        />
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:maxHeight="10dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/transparent"
+                android:id="@+id/sendButton"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:text="@string/send_button"
+                android:layout_below="@id/frame_layout"
+                />
+</RelativeLayout>
