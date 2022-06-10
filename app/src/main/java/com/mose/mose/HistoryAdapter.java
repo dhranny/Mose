@@ -1,5 +1,6 @@
 package com.mose.mose;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
 
     public HistoryAdapter(ArrayList<TransactionModel> tranModel){
         this.tranModels = tranModel;
+        Log.d("Test", "Got to viewholder, here");
     }
-    public HistoryAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+
+    @Override
+    public HistoryAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.history_recycler, parent, false);
-        return new ViewHolder(view);
+        return new HistoryAdapter.ViewHolder(view);
     }
 
     @Override
@@ -32,21 +36,24 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         holder.setValue(tranModel.getBitValue());
     }
 
+
     @Override
     public int getItemCount() {
-        return 0;
+        return tranModels.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         View itemView;
+        View cardView;
         TextView valueView, typeView, timeView;
-        public ViewHolder(@NonNull @NotNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
             valueView = itemView.findViewById(R.id.value);
             typeView = itemView.findViewById(R.id.type);
             timeView = itemView.findViewById(R.id.time);
+            cardView = itemView.findViewById(R.id.history_cardview);
         }
 
         public void setTime(Date date){
@@ -60,10 +67,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         public void setType(TransactionModel.Type type){
             typeView.setText(String.valueOf(type));
             if (type.equals(TransactionModel.Type.RECEIVE)){
-                itemView.setBackgroundColor(itemView.getResources().getColor(R.color.green));
+                cardView.setBackgroundColor(itemView.getResources().getColor(R.color.green));
             }
             else {
-                itemView.setBackgroundColor(itemView.getResources().getColor(R.color.green));
+                cardView.setBackgroundColor(itemView.getResources().getColor(R.color.pink));
             }
         }
 

@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import com.mose.mose.databinding.ActivityMainBinding;
@@ -17,6 +18,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.d("test", "We  main got here");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         replaceFragment(new HistoryFragment());
         binding.sendButton.setOnClickListener(this::sendButtonListenener);

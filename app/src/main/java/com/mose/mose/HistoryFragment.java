@@ -2,10 +2,12 @@ package com.mose.mose;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.mose.mose.databinding.FragmentHistoryBinding;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,12 +19,12 @@ public class HistoryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-    View binding;
+    View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = inflater.inflate(R.layout.fragment_history, container, false);
+        rootView = inflater.inflate(R.layout.fragment_history, container, false);
         ArrayList<TransactionModel> models = new ArrayList<>();
         models.add(new TransactionModel(200, TransactionModel.Type.RECEIVE, new Date()));
         models.add(new TransactionModel(200, TransactionModel.Type.RECEIVE, new Date()));
@@ -32,10 +34,10 @@ public class HistoryFragment extends Fragment {
         models.add(new TransactionModel(200, TransactionModel.Type.RECEIVE, new Date()));
         models.add(new TransactionModel(2002, TransactionModel.Type.RECEIVE, new Date()));
         models.add(new TransactionModel(2030, TransactionModel.Type.RECEIVE, new Date()));
-        HistoryAdapter historyAdapter = new HistoryAdapter(models);
-        // Inflate the layout for this fragment
-        return binding;
-
-        
+        Log.d("Test", "Got to oncreateview for fragment, here");
+        RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(new HistoryAdapter(models));
+        return rootView;
     }
 }
