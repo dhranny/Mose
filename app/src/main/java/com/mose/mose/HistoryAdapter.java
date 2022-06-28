@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -57,7 +59,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         }
 
         public void setTime(Date date){
-            timeView.setText(String.valueOf(date.getTime()));
+            DateFormat dateFormat = new SimpleDateFormat("hh:mm");
+
+            timeView.setText(dateFormat.format(date));
         }
 
         public void setValue(int value){
@@ -67,10 +71,10 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         public void setType(TransactionModel.Type type){
             typeView.setText(String.valueOf(type));
             if (type.equals(TransactionModel.Type.RECEIVE)){
-                cardView.setBackgroundColor(itemView.getResources().getColor(R.color.green));
+                cardView.setBackground(itemView.getResources().getDrawable(R.drawable.green_background));
             }
             else {
-                cardView.setBackgroundColor(itemView.getResources().getColor(R.color.pink));
+                cardView.setBackground(itemView.getResources().getDrawable(R.drawable.pink_background));
             }
         }
 

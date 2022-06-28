@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mose</string>
+    <string name="app_name">Xyrus</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -15,4 +15,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment111111</string>
     <string name="finishButton">Finish</string>
+    <string name="address">Address</string>
 </resources>

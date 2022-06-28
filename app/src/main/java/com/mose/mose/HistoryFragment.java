@@ -1,6 +1,6 @@
 package com.mose.mose;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,10 +30,10 @@ public class HistoryFragment extends Fragment {
         models.add(new TransactionModel(200, TransactionModel.Type.RECEIVE, new Date()));
         models.add(new TransactionModel(2600, TransactionModel.Type.SENT, new Date()));
         models.add(new TransactionModel(2030, TransactionModel.Type.RECEIVE, new Date()));
-        models.add(new TransactionModel(202, TransactionModel.Type.RECEIVE, new Date()));
-        models.add(new TransactionModel(200, TransactionModel.Type.RECEIVE, new Date()));
+        models.add(new TransactionModel(202, TransactionModel.Type.SENT, new Date()));
+        models.add(new TransactionModel(200, TransactionModel.Type.SENT, new Date()));
         models.add(new TransactionModel(2002, TransactionModel.Type.RECEIVE, new Date()));
-        models.add(new TransactionModel(2030, TransactionModel.Type.RECEIVE, new Date()));
+        models.add(new TransactionModel(2030, TransactionModel.Type.SENT, new Date()));
         Log.d("Test", "Got to oncreateview for fragment, here");
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

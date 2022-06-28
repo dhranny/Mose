@@ -1,6 +1,6 @@
 package com.mose.mose;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 //import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;

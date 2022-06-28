@@ -4,13 +4,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:padding="5dp">
+        >
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:cardElevation="30dp"
+            android:layout_margin="10dp"
             app:cardCornerRadius="30dp"
             android:id="@+id/history_cardview"
             app:layout_constraintStart_toStartOf="parent"

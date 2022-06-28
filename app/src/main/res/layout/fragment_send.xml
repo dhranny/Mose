@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".SendFragment">
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".SendFragment"
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_send"
+        android:layout_height="match_parent">
+    <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+        <!-- TODO: Update blank fragment layout -->
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:hint="Recipient's Address"
+                android:id="@+id/recipientAddress"
+                android:layout_marginTop="70dp"
+                android:inputType="number"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/address_border"
+        />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:hint="Amount"
+                android:layout_below="@id/recipientAddress"
+                android:id="@+id/amount"
+                android:layout_marginTop="65dp"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/address_border"
+        />
 
-</FrameLayout>
+    </RelativeLayout>
+</ScrollView>
