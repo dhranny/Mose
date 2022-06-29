@@ -1,6 +1,5 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
-import android.app.Activity;
 import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,11 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.mose.mose.databinding.ActivityMainBinding;
+import com.mose.xyrus.databinding.ActivityMainBinding;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     public SendFragment sendFragment;
     Bundle savedInstanceState;
+    CreateWalletResponse createWalletResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        this.savedInstanceState = savedInstanceState;
+        createWalletResponse = new CreateWalletResponse();
         Log.d("test", "We  main got here");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
             binding.address.setText(address);
         }
         else {
-            savedInstanceState = new Bundle();
-            getWalletId(savedInstanceState);
+            getWalletId(createWalletResponse);
         }
         replaceFragment(new HistoryFragment());
         binding.sendButton.setOnClickListener(this::sendButtonListenener);
@@ -69,18 +67,20 @@ public class MainActivity extends AppCompatActivity {
             view.setText(R.string.finishButton);
         }
         else{
-            Intent intent = new Intent(this, FinishActivity.class);
-            startActivity(intent);
-            replaceFragment(new HistoryFragment());
+            //Intent intent = new Intent(this, FinishActivity.class);
+            //startActivity(intent);
+            sendMoney();
+            //replaceFragment(new HistoryFragment());
             view.setText(R.string.send_button);
-
         }
     }
-    private void getSuperHeroes() {
+    private void sendMoney() {
         EditText valueToSend = findViewById(R.id.amount);
         EditText addressToSendTO = findViewById(R.id.recipientAddress);
-        long walletID = savedInstanceState.getLong("walled_id");
-        SendModel sendModel = new SendModel(Integer.getInteger(valueToSend.getText().toString()), addressToSendTO.getText().toString(), walletID);
+        Long walletID = createWalletResponse.getWalletID();
+        Log.d("Check instance", walletID.toString());
+        SendModel sendModel = new SendModel(Integer.parseInt(valueToSend.getText().toString()), addressToSendTO.getText().toString(), walletID);
+
         Call<List<SendModel>> call = RetrofitClient.getInstance().getMyApi().sendBTC(sendModel);
         call.enqueue(new Callback<List<SendModel>>() {
             @Override
@@ -98,17 +98,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void getWalletId(Bundle savedInstanceState){
+    private void getWalletId(CreateWalletResponse createWalletResponse){
         Call<CreateWalletResponse> call = RetrofitClient.getInstance().getMyApi().createWallet();
         call.enqueue(new Callback<CreateWalletResponse>() {
             @Override
             public void onResponse(Call<CreateWalletResponse> call, Response<CreateWalletResponse> response) {
-                CreateWalletResponse responseBody = response.body();
-                savedInstanceState.putLong("wallet_id", responseBody.getWalletID());
-                savedInstanceState.putString("Address", responseBody.getWalletAddress());
-                Log.d("CHeck", responseBody.getWalletAddress());
+                CreateWalletResponse walletResponse = response.body();
+                createWalletResponse.setWalletID(walletResponse.getWalletID());
+                createWalletResponse.setWalletAddress(walletResponse.getWalletAddress());
                 TextView addressView = (TextView)findViewById(R.id.address);
-                addressView.setText(responseBody.getWalletAddress());
+                addressView.setText(walletResponse.getWalletAddress());
             }
 
             @Override

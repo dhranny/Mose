@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

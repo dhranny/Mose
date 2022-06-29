@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;

@@ -4,16 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/drawable/address_border.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/drawable/frame_border.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/green_background.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/drawable/ic_done.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/drawable/ic_done_2.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/drawable/logo_background.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/drawable/pink_background.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/layout/activity_finish.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_send.xml" value="0.25" />
         <entry key="app/src/main/res/layout/history_recycler.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/logo.xml" value="0.20989583333333334" />
       </map>
     </option>
   </component>

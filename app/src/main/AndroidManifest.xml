@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.mose.mose">
+          package="com.mose.xyrus">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,17 +8,17 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/logo_foreground"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/logo_foreground"
             android:supportsRtl="true"
             android:usesCleartextTraffic="true"
             android:theme="@style/Theme.Mose">
         <activity
-                android:name=".FinishActivity"
+                android:name="com.mose.xyrus.FinishActivity"
                 android:exported="true"/>
         <activity
-                android:name=".MainActivity"
+                android:name="com.mose.xyrus.MainActivity"
                 android:exported="true"
                 android:label="@string/app_name"
                 android:theme="@style/Theme.Mose.NoActionBar">
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <service
-                android:name=".CustomCloudMessaging"
+                android:name="com.mose.xyrus.CustomCloudMessaging"
                 android:exported="true"
                 android:enabled="true">
             <intent-filter>

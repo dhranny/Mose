@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

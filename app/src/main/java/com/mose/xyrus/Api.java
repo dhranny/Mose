@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface Api {
 
-    String BASE_URL = "https://f13b-105-112-31-127.eu.ngrok.io/";
+    String BASE_URL = "https://a647-105-112-179-55.eu.ngrok.io/";
     @POST("send")
     Call<List<SendModel>> sendBTC(@Body SendModel sendModel);
 

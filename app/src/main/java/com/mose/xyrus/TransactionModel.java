@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import lombok.Data;
 

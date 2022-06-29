@@ -1,12 +1,10 @@
-package com.mose.xyrus;
+package com.xyrus.api.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class CreateWalletResponse {
     private long walletID;
     private String walletAddress;

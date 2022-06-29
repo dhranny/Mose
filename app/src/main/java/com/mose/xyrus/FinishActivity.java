@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

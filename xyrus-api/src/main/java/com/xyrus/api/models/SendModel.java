@@ -1,16 +1,14 @@
-package com.mose.xyrus;
+package com.xyrus.api.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.math.BigInteger;
+
 @Data
-@AllArgsConstructor
 public class SendModel {
 
     private int ValueToSend;
     private String addressToSendTo;
-    private long walletId;
+    private int walletId;
 
 }
-
-

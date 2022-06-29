@@ -1,4 +1,4 @@
-package com.mose.mose;
+package com.mose.xyrus;
 
 import android.util.Log;
 import android.view.LayoutInflater;
