@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             binding.address.setText(address);
         }
         else {
+            savedInstanceState = new Bundle();
             getWalletId(savedInstanceState);
         }
         replaceFragment(new HistoryFragment());

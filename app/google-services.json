@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "763777830425",
+    "project_id": "xyrus-e2402",
+    "storage_bucket": "xyrus-e2402.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763777830425:android:bc7390209b79ff3fa36488",
+        "android_client_info": {
+          "package_name": "com.mose.xyrus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763777830425-gbndga58eahg3ntvlmnbkpiet2hnbsgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfLpvJNkgTXrQwXjMlKkAYAljngP71Z9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763777830425-gbndga58eahg3ntvlmnbkpiet2hnbsgr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
