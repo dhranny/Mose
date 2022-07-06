@@ -35,7 +35,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         TransactionModel tranModel = tranModels.get(position);
         holder.setTime(tranModel.getDate());
         holder.setType(tranModel.getTransactType());
-        holder.setValue(tranModel.getBitValue());
+        holder.setValue(tranModel.getBitValue()/100000000);
+    }
+
+    public void updateHistory(){
+
     }
 
 

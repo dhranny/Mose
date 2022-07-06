@@ -9,7 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="balance">0.000034</string>
+    <string name="balance">0.0</string>
     <string name="history_word">History</string>
     <string name="send_button">Send</string>
     <!-- TODO: Remove or change this placeholder text -->

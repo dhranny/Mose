@@ -4,6 +4,7 @@ import org.bitcoinj.core.BlockChain;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.PeerGroup;
 import org.bitcoinj.net.discovery.DnsDiscovery;
+import org.bitcoinj.params.RegTestParams;
 import org.bitcoinj.params.TestNet3Params;
 import org.bitcoinj.store.BlockStoreException;
 import org.bitcoinj.store.MemoryBlockStore;
@@ -26,6 +27,7 @@ public class PeerGroupService {
 
 
     NetworkParameters params;
+    private BlockChain chain;
 
     PeerGroupService(){
 
@@ -33,9 +35,8 @@ public class PeerGroupService {
 
     public void init(List<Wallet> wallets){
         params = TestNet3Params.get();
-        BlockChain chain;
         try {
-            chain = new BlockChain(params, wallets, new SPVBlockStore(params, new File("/home/niel/Downloads/xyrus-api/src/main/resources/BLOCK")));
+            chain = new BlockChain(params, wallets, new SPVBlockStore(params, new File("/home/niel/Downloads/Xyrus/xyrus-api/src/main/resources/BLOCK")));
         } catch (BlockStoreException e) {
             e.printStackTrace();
             return;
@@ -45,11 +46,15 @@ public class PeerGroupService {
         peerGroup.addPeerDiscovery(new DnsDiscovery(params));
         Date date = new Date();
         peerGroup.setFastCatchupTimeSecs(date.getTime() - 1);
-        peerGroup.startAsync();
-        //peerGroup.downloadBlockChain();
+        peerGroup.start();
+        peerGroup.downloadBlockChain();
     }
 
     public PeerGroup getPeerGroup(){
         return peerGroup;
+    }
+
+    public BlockChain getChain() {
+        return chain;
     }
 }

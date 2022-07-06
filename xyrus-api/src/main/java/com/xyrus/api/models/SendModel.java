@@ -7,7 +7,7 @@ import java.math.BigInteger;
 @Data
 public class SendModel {
 
-    private int ValueToSend;
+    private int valueToSend;
     private String addressToSendTo;
     private int walletId;
 

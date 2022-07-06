@@ -6,15 +6,17 @@ import java.util.Date;
 
 @Data
 public class TransactionModel {
-    private int bitValue;
+    private long balance;
+    private long bitValue;
 
-    public TransactionModel(int bitValue, Type transactType, Date date) {
+    public TransactionModel(long bitValue, long balance, Type transactType, Date date) {
         this.bitValue = bitValue;
+        this.balance = balance;
         this.transactType = transactType;
         this.date = date;
     }
 
-    protected enum Type{
+    public enum Type{
         SENT, RECEIVE
     }
 
